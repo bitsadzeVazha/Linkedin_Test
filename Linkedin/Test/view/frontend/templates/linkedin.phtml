@@ -1,0 +1,32 @@
+<?php
+/**
+ * @var \Linkedin\Test\Block\Vista $block
+ */
+?>
+
+<?php  
+    $required = $block->LinkedinEnable();
+    $visible = $block->LinkedinVisible();
+?>
+
+<?php if($visible == 1) : ?>
+    <?php if($required == 1) : ?>
+        <div  class="field required">
+    <?php endif; ?> 
+    
+    <?php if($required == 0) : ?>
+        <div >
+    <?php endif; ?>   
+    
+    <label class="label" for="linkedin_profile">
+        <span><?php echo __('Linkedin Profile');?></span>
+    </label>
+    <div class="control">
+        <input type="text" name="linkedin_profile" id="linkedin_profile" value=""
+               title="<?php echo __('Linkedin Profile'); ?>" class="input-text" data-validate="{required:true}">
+    </div>
+</div>
+
+<?php endif; ?>
+
+
